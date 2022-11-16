@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>MainActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.calculator2</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">androidx.appcompat.app.AppCompatActivity</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.Button</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.EditText</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.TextView</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">MainActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity {</span>
+
+    <span class="s1">EditText etFirstValue</span><span class="s0">, </span><span class="s1">etSecondValue</span><span class="s0">;</span>
+    <span class="s1">TextView tvAns</span><span class="s0">;</span>
+    <span class="s1">Button add</span><span class="s0">, </span><span class="s1">subtract</span><span class="s0">, </span><span class="s1">multiply</span><span class="s0">, </span><span class="s1">divide</span><span class="s0">;</span>
+
+
+    <span class="s1">@Override</span>
+    <span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) {</span>
+        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span><span class="s0">;</span>
+        <span class="s1">setContentView(R.layout.activity_main)</span><span class="s0">;</span>
+
+        <span class="s1">etFirstValue=findViewById(R.id.etFirstValue)</span><span class="s0">;</span>
+        <span class="s1">etSecondValue=findViewById(R.id.etSecondValue)</span><span class="s0">;</span>
+        <span class="s1">tvAns=findViewById(R.id.tvAns)</span><span class="s0">;</span>
+        <span class="s1">add=findViewById(R.id.btnAdd)</span><span class="s0">;</span>
+        <span class="s1">subtract=findViewById(R.id.btnSubtract)</span><span class="s0">;</span>
+        <span class="s1">multiply=findViewById(R.id.btnMultiply)</span><span class="s0">;</span>
+        <span class="s1">divide=findViewById(R.id.btnDivide)</span><span class="s0">;</span>
+
+        <span class="s1">add.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick(View view) {</span>
+
+                <span class="s0">int </span><span class="s1">firstValue</span><span class="s0">, </span><span class="s1">secondValue</span><span class="s0">, </span><span class="s1">ans</span><span class="s0">;</span>
+                <span class="s1">firstValue=Integer.parseInt(etFirstValue.getText().toString())</span><span class="s0">;</span>
+                <span class="s1">secondValue=Integer.parseInt(etSecondValue.getText().toString())</span><span class="s0">;</span>
+                <span class="s1">ans=firstValue+secondValue</span><span class="s0">;</span>
+                <span class="s1">tvAns.setText(</span><span class="s2">&quot;Ans is:&quot;</span><span class="s1">+ans)</span><span class="s0">;</span>
+                         <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+
+        <span class="s1">subtract.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick(View view) {</span>
+
+                <span class="s0">int </span><span class="s1">firstValue</span><span class="s0">, </span><span class="s1">secondValue</span><span class="s0">, </span><span class="s1">ans</span><span class="s0">;</span>
+                <span class="s1">firstValue=Integer.parseInt(etFirstValue.getText().toString())</span><span class="s0">;</span>
+                <span class="s1">secondValue=Integer.parseInt(etSecondValue.getText().toString())</span><span class="s0">;</span>
+                <span class="s1">ans=firstValue-secondValue</span><span class="s0">;</span>
+                <span class="s1">tvAns.setText(</span><span class="s2">&quot;Ans is:&quot;</span><span class="s1">+ans)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+
+        <span class="s1">multiply.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick(View view) {</span>
+
+                <span class="s0">int </span><span class="s1">firstValue</span><span class="s0">, </span><span class="s1">secondValue</span><span class="s0">, </span><span class="s1">ans</span><span class="s0">;</span>
+                <span class="s1">firstValue=Integer.parseInt(etFirstValue.getText().toString())</span><span class="s0">;</span>
+                <span class="s1">secondValue=Integer.parseInt(etSecondValue.getText().toString())</span><span class="s0">;</span>
+                <span class="s1">ans=firstValue*secondValue</span><span class="s0">;</span>
+                <span class="s1">tvAns.setText(</span><span class="s2">&quot;Ans is:&quot;</span><span class="s1">+ans)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+
+        <span class="s1">divide.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick(View view) {</span>
+
+                <span class="s0">int </span><span class="s1">firstValue</span><span class="s0">, </span><span class="s1">secondValue</span><span class="s0">, </span><span class="s1">ans</span><span class="s0">;</span>
+                <span class="s1">firstValue=Integer.parseInt(etFirstValue.getText().toString())</span><span class="s0">;</span>
+                <span class="s1">secondValue=Integer.parseInt(etSecondValue.getText().toString())</span><span class="s0">;</span>
+                <span class="s1">ans=firstValue/secondValue</span><span class="s0">;</span>
+                <span class="s1">tvAns.setText(</span><span class="s2">&quot;Ans is:&quot;</span><span class="s1">+ans)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+
+
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>
